@@ -2,6 +2,7 @@ name: E2E Tests
 
 on:
   workflow_dispatch:
+  workflow_call:
 
 jobs:
   e2e-tests:
@@ -9,6 +10,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          repository: Isrealade/gh-actions-playground.git
+          ref: main
 
       - name: Setup Node
         uses: actions/setup-node@v3
