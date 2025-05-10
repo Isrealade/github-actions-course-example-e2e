@@ -24,7 +24,9 @@ jobs:
           node-version: 20.x
       
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd ..
+          npm install
 
       - name: Run E2E tests
         run: npm run test:e2e
