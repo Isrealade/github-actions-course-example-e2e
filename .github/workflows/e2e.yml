@@ -3,6 +3,9 @@ name: E2E Tests
 on:
   workflow_dispatch:
   workflow_call:
+    secrets:
+      access-token:
+        required: true
 
 jobs:
   e2e-tests:
@@ -13,6 +16,7 @@ jobs:
         with:
           repository: Isrealade/gh-actions-playground.git
           ref: main
+          token: ${{ inputs.secrets || secrets.GITHUB_TOKEN }}
 
       - name: Setup Node
         uses: actions/setup-node@v3
