@@ -16,7 +16,7 @@ jobs:
         with:
           repository: Isrealade/github-actions-course-example-e2e
           ref: main
-          token: ${{ inputs.secrets || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.access-token || secrets.GITHUB_TOKEN }}
 
       - name: Setup Node
         uses: actions/setup-node@v3
