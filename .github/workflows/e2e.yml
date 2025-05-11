@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          repository: Isrealade/github-actions-course-example-e2e.git
+          repository: Isrealade/github-actions-course-example-e2e
           ref: main
           token: ${{ inputs.secrets || secrets.GITHUB_TOKEN }}
 
